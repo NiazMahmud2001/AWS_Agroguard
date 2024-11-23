@@ -60,14 +60,14 @@
                 echo "<p>Please Enter your Drone id of 20 Character with ' - '!!!</p>";
             };
         }else{
-            $sql_droneid = "SELECT id from droneids WHERE `id`='$droneMainID';";
+            $sql_droneid = "SELECT id from droneIDS WHERE `id`='$droneMainID';";
             $result_droneID  = $Py_server -> query($sql_droneid);
             if ($result_droneID == TRUE){
                 if ($result_droneID->num_rows > 0) {
                     while ($row = $result_droneID->fetch_assoc()) {
                         $gets_ids = $row['id'];
                         if($gets_ids==$droneMainID){
-                            $sql_insert = "INSERT INTO userreg (`userName`, `userPass`, `droneId`) VALUES ('$userName', '$userPass', '$droneID');";
+                            $sql_insert = "INSERT INTO userReg (`userName`, `userPass`, `droneId`) VALUES ('$userName', '$userPass', '$droneID');";
                             $result_insert = $Py_server -> query($sql_insert);
         
                             if($result_insert == TRUE) {
