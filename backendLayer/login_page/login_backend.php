@@ -51,7 +51,7 @@
                 echo "<p>Please Enter user password less than 10 and greater than 4 character!!!</p>";
             };
         }else{ 
-            $sql_select = "SELECT userName, userPass FROM userreg WHERE `userName`='$userName' AND `userPass`='$userPass';";
+            $sql_select = "SELECT userName, userPass FROM userReg WHERE `userName`='$userName' AND `userPass`='$userPass';";
             $result_insert = $Py_server -> query($sql_select);
             $rows = mysqli_fetch_row($result_insert);
 
