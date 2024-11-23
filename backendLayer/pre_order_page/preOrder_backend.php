@@ -105,7 +105,7 @@
         if ($result_insert == TRUE) {
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 //after processing data => redirect to "index.php"
-                header("Location:  http://ExternalLoadBalancer-1002005169.eu-north-1.elb.amazonaws.com");
+                header("Location:  http://10.0.4.21");
                 exit();
             }
         } else {

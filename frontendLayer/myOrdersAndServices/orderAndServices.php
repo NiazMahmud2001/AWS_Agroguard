@@ -1,5 +1,4 @@
 <?php
-    session_start();
     $userName = null;
     if (isset($_GET['userName'])) {
         $userName =$_GET['userName'];
@@ -94,7 +93,7 @@
               <div class="dataInfo">
                   <?php 
                     
-                    $url = "http://internal-AppTier-LB-992887380.eu-north-1.elb.amazonaws.com/myOrdersAndServices/backendOrderServices.php?ppName=$userName";
+                    $url = "../proxy_folder/myOrdersAndServices/backendOrderServices.php?ppName=$userName";
 
                     $ch = curl_init($url);
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
