@@ -72,7 +72,7 @@
         
                             if($result_insert == TRUE) {
                                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                                    header("Location:  http://10.0.4.21");
+                                    header("Location:  http://ExternalLoadBalancer-1002005169.eu-north-1.elb.amazonaws.com");
                                     exit();
                                 };
                             };
