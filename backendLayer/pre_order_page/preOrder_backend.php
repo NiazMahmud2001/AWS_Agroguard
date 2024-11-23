@@ -99,7 +99,7 @@
 
 
         #Now insert the data to database: ========================================
-        $sql_insert = "INSERT INTO preorder_info (`cusName`, `deliveryAddress`, `cusEID`, `deliveryLon` , `deliveryLat`, `desireModel`, `deliverystate`, `estDeliveryDate`, `agentID`) VALUES ('$cusName', '$deliveryAddress', '$cusEID', $lon, $lat,'$droneModel','$selectedCity', $deliveryDateInt, '$agentId');";
+        $sql_insert = "INSERT INTO preOrder_info (`cusName`, `deliveryAddress`, `cusEID`, `deliveryLon` , `deliveryLat`, `desireModel`, `deliverystate`, `estDeliveryDate`, `agentID`) VALUES ('$cusName', '$deliveryAddress', '$cusEID', $lon, $lat,'$droneModel','$selectedCity', $deliveryDateInt, '$agentId');";
         $result_insert = $Py_server -> query($sql_insert);
 
         if ($result_insert == TRUE) {
