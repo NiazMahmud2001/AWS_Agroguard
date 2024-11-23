@@ -1,5 +1,4 @@
 <?php
-    session_start();
     $userName = null;
     if (isset($_GET['userName'])) {
         $userName =$_GET['userName'];
@@ -84,7 +83,7 @@
         <div class="form_cont">
           <div class="form_mother">
             <div class="left_part">
-              <form action="http://internal-InternalLoadBalancer-1906280642.eu-north-1.elb.amazonaws.com/login_page/login_backend.php"  method="post" class="log_in_part">
+              <form action="http://internal-AppTier-LB-992887380.eu-north-1.elb.amazonaws.com/login_page/login_backend.php"  method="post" class="log_in_part">
                 <input
                   type="text"
                   class="user_name"
@@ -100,7 +99,7 @@
                 <button class="submit">Submit</button>
               </form>
 
-              <form action="http://internal-InternalLoadBalancer-1906280642.eu-north-1.elb.amazonaws.com/login_page/register_backend.php" method="post" class="register_part">
+              <form action="http://internal-AppTier-LB-992887380.eu-north-1.elb.amazonaws.com/login_page/register_backend.php" method="post" class="register_part">
                 <input
                   type="text"
                   class="user_name"
