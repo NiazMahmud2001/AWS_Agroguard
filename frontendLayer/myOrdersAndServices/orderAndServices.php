@@ -94,7 +94,7 @@
               <div class="dataInfo">
                   <?php 
                     
-                    $url = "http://internal-InternalLoadBalancer-1906280642.eu-north-1.elb.amazonaws.com/myOrdersAndServices/backendOrderServices.php?ppName=$userName";
+                    $url = "http://internal-AppTier-LB-992887380.eu-north-1.elb.amazonaws.com/myOrdersAndServices/backendOrderServices.php?ppName=$userName";
 
                     $ch = curl_init($url);
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
