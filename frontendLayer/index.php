@@ -1,5 +1,4 @@
 <?php
-    session_start();
     $userName = null;
     if (isset($_GET['userName'])) {
         $userName =$_GET['userName'];

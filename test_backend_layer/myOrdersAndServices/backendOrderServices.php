@@ -1,9 +1,10 @@
 
 
+
 <?php 
 
     $arr = ["11111", "22222" , "33333", "444444", "5555555", "6666666"]; 
-    forrach($arr as $data){
+    foreach($arr as $data){
         echo "<h1> $data</h1><br>"; 
     };
 

@@ -57,7 +57,7 @@
 
             if($result_insert==TRUE and $rows!=null) {
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    header("Location: http://ExternalLoadBalancer-1002005169.eu-north-1.elb.amazonaws.com?userName=$userName");
+                    header("Location: http://10.0.4.21?userName=$userName");
                     exit();
                 };
                 //echo "<p>$rows[0] , $rows[1]</p>";
