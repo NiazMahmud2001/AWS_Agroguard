@@ -86,7 +86,7 @@
         <div class="form_cont">
           <div class="form_mother">
             <div class="left_part">
-              <form class="log_in_part" action="http://internal-InternalLoadBalancer-1906280642.eu-north-1.elb.amazonaws.com/pre_order_pagepreOrder_backend.php" method="post">
+              <form class="log_in_part" action="http://internal-AppTier-LB-992887380.eu-north-1.elb.amazonaws.com/pre_order_pagepreOrder_backend.php" method="post">
                 <input
                   type="text"
                   class="user_name"
