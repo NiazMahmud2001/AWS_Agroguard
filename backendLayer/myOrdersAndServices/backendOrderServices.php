@@ -1,40 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php
+        $userName = $_GET['userName'];  
+        $backend_url = "http://internal-apptier-lb-992887380.eu-north-1.elb.amazonaws.com/myOrdersAndServices/backendOrderServices.php?ppName=$userName";
 
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $backend_url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        $response = curl_exec($ch);
 
-<?php 
+        if(curl_errno($ch)) {
+            echo 'Error:' . curl_error($ch);
+        } else {
+            header('Content-Type: application/json');
+            echo $response;
+        }
+        curl_close($ch);
+    ?>
 
-
-    define("servername" , "rds-agroguard.ctkokooiid1w.eu-north-1.rds.amazonaws.com");
-    define("username" , "niazAdmin");
-    define("password" , "7835e6ef");
-    define("dbname" , "agroguard");
-
-    $Py_server = new mysqli(constant("servername") , constant("username"), constant("password"), constant("dbname"));
-
-    if (mysqli_error($Py_server)){
-    echo "Failed to connect to MySQL: " . $Py_server-> connect_error;
-    exit();
-    };
-
-    $userNames = $_GET['ppName'];
-
-    $sql_command = "select droneid from userreg where `userName`='$userNames';";
-    $result_insert = $Py_server -> query($sql_command);
-    $rows = mysqli_fetch_row($result_insert);
-    $droneName  = explode("-" , $rows[0])[0];
-
-    $sqlCommandServices = "select serviceLink , serviceName from droneservices where `droneId`='$droneName';"; 
-    $result_insert = $Py_server -> query($sqlCommandServices);
-    $rows = mysqli_fetch_row($result_insert);
-
-    $t = 1;
-
-    $orders = [];
-    while ($rows = mysqli_fetch_row($result_insert)){
-        //echo "<a href='$rows[0]' class='servicesOptions'>$t : $rows[1] Link</a>";
-        $orders[] = "<a href='$rows[0]' class='servicesOptions'>$t : $rows[1] Link</a>";
-        $t++;
-    };
-    echo json_encode($orders);
-    $Py_server->close();
-
-?>
+</body>
+</html>
