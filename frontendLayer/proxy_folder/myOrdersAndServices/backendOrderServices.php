@@ -7,8 +7,8 @@
 </head>
 <body>
     <?php
-        $userName = $_GET['userName'];  
-        $backend_url = "http://internal-apptier-lb-992887380.eu-north-1.elb.amazonaws.com/myOrdersAndServices/backendOrderServices.php?ppName=$userName";
+        $userNames = $_GET['ppName'];  
+        $backend_url = "http://internal-apptier-lb-992887380.eu-north-1.elb.amazonaws.com/myOrdersAndServices/backendOrderServices.php?ppName=".$userNames;
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $backend_url);
