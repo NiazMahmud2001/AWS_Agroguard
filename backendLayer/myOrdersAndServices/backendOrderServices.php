@@ -28,12 +28,12 @@
     
         $userNames = $_GET['ppName'];
 
-        $sql_command = "select droneId from userReg where `userName`='$userNames';";
+        $sql_command = "SELECT droneId FROM userReg WHERE `userName`='$userNames';";
         $result_insert = $Py_server -> query($sql_command);
         $rows = mysqli_fetch_row($result_insert);
         $droneName  = explode("-" , $rows[0])[0];
     
-        $sqlCommandServices = "select serviceLink , serviceName from droneServices where `droneId`='$droneName';"; 
+        $sqlCommandServices = "SELECT serviceLink , serviceName FROM droneServices WHERE `droneId`='$droneName';"; 
         $result_insert = $Py_server -> query($sqlCommandServices);
         $rows = mysqli_fetch_row($result_insert);
     
