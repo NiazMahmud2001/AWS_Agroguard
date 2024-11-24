@@ -30,7 +30,7 @@
   <body>
     <div class="main">
       <div class="menubar">
-        <a href="../index.php" class="logo">
+        <a href="../index.php?userName=$userName" class="logo">
           <svg
             class="mother_logo"
             width="440"
@@ -57,7 +57,7 @@
         <div class="other_button">
           <?php
               if ($userName!=null){
-                echo '<div class="more_info"><a href="../myOrdersAndServices/orderAndServices.php">My Services</a></div>';
+                echo '<div class="more_info"><a href="../myOrdersAndServices/orderAndServices.php?userName=$userName">My Services</a></div>';
               };
           ?>
 
@@ -66,11 +66,11 @@
           </div>
           <?php
               if ($userName==null){
-                echo '<div class="Log_in"><a href="./login_page/login_page.php">LogIn</a></div>';
+                echo '<div class="Log_in"><a href="./login_page/login_page.php?userName=$userName">LogIn</a></div>';
               };
           ?>
           <div class="Log_in">
-            <a href="../find_us_map/find_us_map.php">Find Us</a>
+            <a href="../find_us_map/find_us_map.php?userName=$userName">Find Us</a>
           </div>
           <?php
               if ($userName!=null){
