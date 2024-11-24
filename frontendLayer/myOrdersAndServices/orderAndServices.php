@@ -30,13 +30,14 @@
   <body>
     <div class="main">
       <div class="menubar">
-         <?php
-              if ($userName!=null){
-                 $main_go = "../index.php?userName=".$userName;
-              }else{
-                 $main_go = "../index.php";
-              };
-              <a href=$main_go class="logo">
+        <?php
+            if ($userName!=null){
+                $main_go = "../index.php?userName=".$userName;
+            }else{
+                $main_go = "../index.php";
+            };
+            echo '<a href='.$main_go.' class="logo">';
+        ?>
               <svg
                 class="mother_logo"
                 width="440"
@@ -59,7 +60,6 @@
                 />
               </svg>
             </a>
-        ?>
 
         <div class="other_button">
             <?php
