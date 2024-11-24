@@ -232,22 +232,22 @@
 
     <script type="module" src="./orderAndServices.js"></script>
     <script>
-        const proxyUrl = "<?php echo $url; ?>";
-        fetch(proxyUrl)
-            //.then(response => response.json())  
+        const proxyUrl = "<?php echo '../proxy_folder/myOrdersAndServices/backendOrderServices.php?ppName='.$userName.'"';?>;
+            fetch(proxyUrl)
+            .then(response => response.text())
             .then(data => {
-                /*if (data && data.length > 0) {
-                    let htmlContent = ""; 
+                trimed_data= data.replace('Array', '').trim();
+                let parsed_data = JSON.parse(trimed_data);
 
-                    data.forEach(item => {
-                        htmlContent += item;  // Add each item as a list item
-                    });
-                    
-                    document.querySelectorAll(".dataInfo").innerHTML = htmlContent; // Inject the HTML into the div
-                } else {
-                    document.querySelectorAll(".dataInfo").innerHTML = "No services found.";
-                }*/
-                console.log(data);
+                parsed_data.forEach(item => {
+                     console.log(item);
+                     /*document.querySelectorAll(".dataInfo").forEach((element) => {
+                        element.innerHTML = item;
+                     });*/
+                     document.querySelector(".dataInfo").innerHTML = item;
+                });
+                //console.log(typeof data);
+                console.log(parsed_data);
             })
             .catch(error => {
                 console.error('Error:', error);
