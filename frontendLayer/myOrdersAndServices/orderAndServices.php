@@ -134,7 +134,7 @@
                     } else {
                         $data = json_decode($response, true);
                         foreach ($data as $item) {
-                            echo "<p>" . htmlspecialchars($item) . "</p>";
+                            echo $data;
                         };
                         echo $response;
                     };
