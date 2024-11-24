@@ -42,8 +42,7 @@
         $orders = [];
         while ($rows = mysqli_fetch_row($result_insert)){
             //echo "<a href='$rows[0]' class='servicesOptions'>$t : $rows[1] Link</a>";
-            $orders[] = "<a href='$rows[0]' class='servicesOptions'>$t : $rows[1] Link</a>";
-            $t++;
+            $orders[] = [$rows[0],$rows[1]];
         };
         header('Content-Type: application/json');
         echo json_encode($orders);
