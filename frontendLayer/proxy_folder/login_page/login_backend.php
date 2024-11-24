@@ -25,7 +25,8 @@ if ($http_code == 302 || $http_code == 301) {
         exit;
     }
 }else{
-    header("Location: http://WebTier-LB-1783077918.eu-north-1.elb.amazonaws.com");
+    header("Location:  https://www.pexels.com/search/funny/");
+    // http://WebTier-LB-1783077918.eu-north-1.elb.amazonaws.com
 };
 
 curl_close($ch);
