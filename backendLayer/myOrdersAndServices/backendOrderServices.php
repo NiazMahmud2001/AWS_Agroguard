@@ -8,12 +8,18 @@
 <body>
     <?php 
         // Database connection variables
-        define("servername" , "rds-agroguard.ctkokooiid1w.eu-north-1.rds.amazonaws.com");
-        define("username" , "niazAdmin");
-        define("password" , "7835e6ef");
-        define("dbname" , "agroguard");
-    
-        $Py_server = new mysqli(constant("servername") , constant("username"), constant("password"), constant("dbname"));
+        $servername = "rds-agroguard.ctkokooiid1w.eu-north-1.rds.amazonaws.com"; // or "127.0.0.1: port number of mysql(not apache)"
+        $username = "niazAdmin";        
+        $password = "7835e6ef";    
+        $dbname = "agroguard";
+        
+        $Py_server = new mysqli($servername ,$username, $password ,$dbname);
+        // Check connection
+        if ($Py_server-> connect_errno) {
+            echo "Failed to connect to MySQL: " . $Py_server-> connect_error;
+            exit();
+        }else{
+            echo "<br> Successfully connected to the db <br><br>";
     
         if (mysqli_error($Py_server)){
         echo "Failed to connect to MySQL: " . $Py_server-> connect_error;
