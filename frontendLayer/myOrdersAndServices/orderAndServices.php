@@ -132,7 +132,11 @@
                     if (curl_errno($ch)) {
                         echo "Error: " . curl_error($ch);
                     } else {
-                      echo $response;
+                        $data = json_decode($response, true);
+                        foreach ($data as $item) {
+                            echo "<p>" . htmlspecialchars($item) . "</p>";
+                        };
+                        echo $response;
                     };
                     curl_close($ch);
                   ?>
