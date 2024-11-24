@@ -61,11 +61,11 @@
                 <div class="contact_us">
                     <?php
                         if ($userName!=null){
-                            $contactUs ="<a href='../pre_order_page/preOrder.php?userName=".$userName."'>Pre Order</a>";
-                            echo $contactUs;
+                            $contactUs1 ="<a href='../pre_order_page/preOrder.php?userName=".$userName."'>Pre Order</a>";
+                            echo $contactUs1;
                         }else{
-                            $contactUs = "<a href='../pre_order_page/preOrder.php'>Pre Order</a>";
-                            echo $contactUs;
+                            $contactUs2 = "<a href='../pre_order_page/preOrder.php'>Pre Order</a>";
+                            echo $contactUs2;
                         };
                     ?>
                 </div>
@@ -80,8 +80,8 @@
                             $find_us_map ="<a href='./find_us_map.php?userName=".$userName."'>Find Us</a>";
                             echo $find_us_map;
                         }else{
-                            $contactUs = "<a href='./find_us_map.php'>Find Us</a>";
-                            echo $contactUs;
+                            $contactUs3 = "<a href='./find_us_map.php'>Find Us</a>";
+                            echo $contactUs3;
                         };
                     ?>
                 </div>
