@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-
+    <?php
         $userName = $_GET['userName'];  
         $backend_url = "http://internal-apptier-lb-992887380.eu-north-1.elb.amazonaws.com/myOrdersAndServices/backendOrderServices.php?ppName=$userName";
 
@@ -23,6 +23,6 @@
             echo $response;
         }
         curl_close($ch);
-    
+    ?>
 </body>
 </html>
