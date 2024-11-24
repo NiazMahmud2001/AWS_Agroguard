@@ -24,7 +24,8 @@
                 }else{
                     $main_go = "../index.php";
                 };
-                <a href=$main_go class="logo">
+                echo '<a href='.$main_go.' class="logo">';
+            ?>
                 <svg
                     class="mother_logo"
                     width="440"
@@ -49,7 +50,6 @@
                     />
                 </svg>
                 </a>
-            ?>
 
             <div class="other_button">
                 <?php
