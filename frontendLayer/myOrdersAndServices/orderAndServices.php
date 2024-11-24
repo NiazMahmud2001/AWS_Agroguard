@@ -120,7 +120,7 @@
               <div class="form_butt">
                 <div class="log_in_butt11">My Drone Services</div>
               </div>
-              <div class="dataInfo" id="content_fetch_all">
+              <div class="dataInfo">
                   <?php 
                         $url = "../proxy_folder/myOrdersAndServices/backendOrderServices.php?ppName=$userName";
                   ?>
@@ -232,12 +232,6 @@
 
     <script type="module" src="./orderAndServices.js"></script>
     <script>
-      VanillaTilt.init(document.querySelector(".form_mother"), {
-        max: 2.5,
-        speed: 500,
-      });
-      VanillaTilt.init(document.querySelectorAll(".form_mother"));
-
         const proxyUrl = "<?php echo $url; ?>";
         fetch(proxyUrl)
             .then(response => response.json())  
@@ -249,15 +243,22 @@
                         htmlContent += item;  // Add each item as a list item
                     });
                     
-                    document.getElementById('content_fetch_all').innerHTML = htmlContent; // Inject the HTML into the div
+                    document.querySelectorAll(".dataInfo").innerHTML = htmlContent; // Inject the HTML into the div
                 } else {
-                    document.getElementById('dataInfo').innerHTML = "No services found.";
+                    document.querySelectorAll(".dataInfo").innerHTML = "No services found.";
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
-                document.getElementById('dataInfo').innerHTML = "An error occurred while fetching data.";
+                document.querySelectorAll(".dataInfo").innerHTML = "An error occurred while fetching data.";
             });
+    </script>
+    <script>
+      VanillaTilt.init(document.querySelector(".form_mother"), {
+        max: 2.5,
+        speed: 500,
+      });
+      VanillaTilt.init(document.querySelectorAll(".form_mother"));
     </script>
   </body>
 </html>
