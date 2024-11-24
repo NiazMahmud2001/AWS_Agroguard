@@ -20,7 +20,7 @@
             echo 'Error:' . curl_error($ch);
         } else {
             header('Content-Type: application/json');
-            echo $response;
+            echo json_encode($response);
         }
         curl_close($ch);
     ?>
