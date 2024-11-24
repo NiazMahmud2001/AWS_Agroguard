@@ -234,9 +234,9 @@
     <script>
         const proxyUrl = "<?php echo $url; ?>";
         fetch(proxyUrl)
-            .then(response => response.json())  
+            //.then(response => response.json())  
             .then(data => {
-                if (data && data.length > 0) {
+                /*if (data && data.length > 0) {
                     let htmlContent = ""; 
 
                     data.forEach(item => {
@@ -246,7 +246,8 @@
                     document.querySelectorAll(".dataInfo").innerHTML = htmlContent; // Inject the HTML into the div
                 } else {
                     document.querySelectorAll(".dataInfo").innerHTML = "No services found.";
-                }
+                }*/
+                console.log(data);
             })
             .catch(error => {
                 console.error('Error:', error);
