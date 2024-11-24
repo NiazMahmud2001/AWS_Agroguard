@@ -120,25 +120,9 @@
               <div class="form_butt">
                 <div class="log_in_butt11">My Drone Services</div>
               </div>
-              <div class="dataInfo">
+              <div class="dataInfo" id="content_fetch_all">
                   <?php 
-                    
-                    $url = "../proxy_folder/myOrdersAndServices/backendOrderServices.php?ppName=$userName";
-
-                    $ch = curl_init($url);
-                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                    $response = curl_exec($ch);
-                  
-                    if (curl_errno($ch)) {
-                        echo "Error: " . curl_error($ch);
-                    } else {
-                        $data = json_decode($response, true);
-                        foreach ($data as $item) {
-                            echo $data;
-                        };
-                        echo $response;
-                    };
-                    curl_close($ch);
+                        $url = "../proxy_folder/myOrdersAndServices/backendOrderServices.php?ppName=$userName";
                   ?>
               </div>
             </div>
@@ -253,6 +237,27 @@
         speed: 500,
       });
       VanillaTilt.init(document.querySelectorAll(".form_mother"));
+
+        const proxyUrl = "<?php echo $url; ?>";
+        fetch(proxyUrl)
+            .then(response => response.json())  
+            .then(data => {
+                if (data && data.length > 0) {
+                    let htmlContent = ""; 
+
+                    data.forEach(item => {
+                        htmlContent += item;  // Add each item as a list item
+                    });
+                    
+                    document.getElementById('content_fetch_all').innerHTML = htmlContent; // Inject the HTML into the div
+                } else {
+                    document.getElementById('dataInfo').innerHTML = "No services found.";
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('dataInfo').innerHTML = "An error occurred while fetching data.";
+            });
     </script>
   </body>
 </html>
