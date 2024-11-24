@@ -71,7 +71,7 @@
                 </div>
                 <?php
                     if ($userName==null){
-                        echo '<div class="Log_in"><a href="../login_page/login_page.php?userName=$userName">LogIn</a></div>';
+                        echo '<div class="Log_in"><a href="../login_page/login_page.php">LogIn</a></div>';
                     };
                 ?>
                 <div class="Log_in">
