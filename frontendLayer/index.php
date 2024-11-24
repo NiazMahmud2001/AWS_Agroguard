@@ -31,7 +31,11 @@
     <div class="main">
       <div class="menubar">
         <?php
-            $main_go = "./index.php?userName=".$userName;
+            if ($userName!=null){
+                $main_go = "./index.php?userName=".$userName;
+            }else{
+                $main_go = "./index.php";
+            };
             <a href=$main_go class="logo">
                 <svg
                 class="mother_logo"
