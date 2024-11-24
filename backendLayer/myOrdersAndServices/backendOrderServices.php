@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
     <?php 
         // Database connection variables
         $servername = "rds-agroguard.ctkokooiid1w.eu-north-1.rds.amazonaws.com"; // or "127.0.0.1: port number of mysql(not apache)"
@@ -42,13 +35,11 @@
         $orders = [];
         while ($rows = mysqli_fetch_row($result_insert)){
             //echo "<a href='$rows[0]' class='servicesOptions'>$t : $rows[1] Link</a>";
-            $orders[] = [$rows[0],$rows[1]];
+            $orders[] = "<a href='$rows[0]' class='servicesOptions'>$t : $rows[1] Link</a>";
+            $t++;
         };
         header('Content-Type: application/json');
         echo json_encode($orders);
         $Py_server->close();
-
     ?>
 
-</body>
-</html>
