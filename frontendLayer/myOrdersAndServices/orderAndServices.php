@@ -64,7 +64,7 @@
         <div class="other_button">
             <?php
                 if ($userName!=null){
-                    $tempData = '<div class="Log_in"><a href="./orderAndServices.php?userName='.$userName.'">'.$userName.'</a>';
+                    $tempData = '<div class="Log_in"><a href="./orderAndServices.php?userName='.$userName.'">'.$userName.'</a></div>';
                     echo $tempData;
                 };
             ?>
