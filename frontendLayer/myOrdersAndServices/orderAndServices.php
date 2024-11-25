@@ -239,13 +239,16 @@
                 trimed_data= data.replace('Array', '').trim();
                 let parsed_data = JSON.parse(trimed_data);
 
+                $tempData = "";
                 parsed_data.forEach(item => {
                      console.log(item);
                      /*document.querySelectorAll(".dataInfo").forEach((element) => {
                         element.innerHTML = item;
                      });*/
-                     document.querySelector(".dataInfo").innerHTML = item;
+                    $tempData+=item;
+                    //document.querySelector(".dataInfo").innerHTML = item;
                 });
+                document.querySelector(".dataInfo").innerHTML = $tempData;
                 //console.log(typeof data);
                 console.log(parsed_data);
             })
